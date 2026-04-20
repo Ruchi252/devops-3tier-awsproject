@@ -19,9 +19,16 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
 
+      - name: Debug (check files)
+        run: |
+          pwd
+          ls -R
+
       - name: Build Docker Image
         run: |
           docker build -t ${{ secrets.USERNAME }}/devops-app:v1 ./app
 
       - name: Push Docker Image
-        run: docker push ${{ secrets.USERNAME }}/devops-app:v1
+
+        run:  |
+          docker push ${{ secrets.USERNAME }}/devops-app:v1

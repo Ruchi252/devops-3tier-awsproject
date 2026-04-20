@@ -25,4 +25,4 @@ jobs:
 
       - name: Push Docker Image
         run: |
-          docker push ${{ secrets.USERNAME }}/devops-app:v1
+          docker push ruchi31364/devops-app:v1
